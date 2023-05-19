@@ -2,7 +2,7 @@
 # https://github.com/VioletGiraffe/qmake-project-template/blob/master/.github/workflows/CI.yml
 # Used according to Apache-2.0 license
 
-name: qmakebuild.yml
+name: Build
 
 on: [push, pull_request]
 
