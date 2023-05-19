@@ -46,7 +46,17 @@ jobs:
         call "%programfiles%\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvarsall.bat" x64
         %Qt5_DIR%\bin\qmake.exe -tp vc -r
         msbuild /t:Build /p:Configuration=Release;PlatformToolset=v143
-# Upload Artifact
+
+#    - name: Deployment Package
+#      run: |
+#        mkdir ${{github.workspace}}\build\all\
+#        cp ${{github.workspace}}/build/RePr.exe ${{github.workspace}}\build\all\
+#        cd ${{github.workspace}}\build\all\
+#        windeployqt.exe RePr.exe --release
+#        ls
+#        Compress-Archive -Path ${{github.workspace}}\build\all\ -DestinationPath ${{github.workspace}}\build\final.zip
+ 
+#    Upload Artifact
     - name: Upload production-ready build files
       uses: actions/upload-artifact@v3
       with:
