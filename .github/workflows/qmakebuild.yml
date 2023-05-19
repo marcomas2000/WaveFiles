@@ -47,14 +47,14 @@ jobs:
         %Qt5_DIR%\bin\qmake.exe -tp vc -r
         msbuild /t:Build /p:Configuration=Release;PlatformToolset=v143
 
-#    - name: Deployment Package
-#      run: |
-#        mkdir ${{github.workspace}}\build\all\
-#        cp ${{github.workspace}}/build/RePr.exe ${{github.workspace}}\build\all\
-#        cd ${{github.workspace}}\build\all\
-#        windeployqt.exe RePr.exe --release
-#        ls
-#        Compress-Archive -Path ${{github.workspace}}\build\all\ -DestinationPath ${{github.workspace}}\build\final.zip
+    - name: Deployment Package
+      run: |
+        mkdir ${{github.workspace}}\release\all\
+        cp ${{github.workspace}}/release/WaveFiles.exe.exe ${{github.workspace}}\release\all\
+        cd ${{github.workspace}}\release\all\
+        windeployqt.exe WaveFiles.exe --release
+        ls
+        Compress-Archive -Path ${{github.workspace}}\release\all\ -DestinationPath ${{github.workspace}}\release\WaveFilesDeploy.zip
  
 #    Upload Artifact
     - name: Upload production-ready build files
