@@ -50,7 +50,7 @@ jobs:
     - name: Deployment Package
       run: |
         mkdir ${{github.workspace}}\release\all\
-        cp ${{github.workspace}}/release/WaveFiles.exe.exe ${{github.workspace}}\release\all\
+        cp ${{github.workspace}}/release/WaveFiles.exe ${{github.workspace}}\release\all\
         cd ${{github.workspace}}\release\all\
         windeployqt.exe WaveFiles.exe --release
         ls
