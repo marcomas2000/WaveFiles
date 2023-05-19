@@ -1,2 +1,4 @@
 production.zip
 production/
+.vscode/settings.json
+.vscode/c_cpp_properties.json
